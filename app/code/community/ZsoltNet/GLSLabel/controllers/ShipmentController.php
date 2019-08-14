@@ -183,12 +183,7 @@ class ZsoltNet_GLSLabel_ShipmentController extends Mage_Adminhtml_Controller_Act
         }
 
         $cookies= $client->getHeader('set-cookie');
-        if(is_array($cookies)) {
-            $cookie = $cookies[0];
-            $cookie = substr($cookie, strpos($cookie,"=")+1, $this->cookielength);
-        } else {
-            $cookie = substr($cookies, strpos($cookies,"=")+1, $this->cookielength);
-        }
+        $cookie = substr($cookies, strpos($cookies,"=")+1, $this->cookielength);
         $client->setCookies(array('PHPSESSID'=>"".$cookie));
         if ($this->debug) {
             $h = fopen($this->debugdir."/glsdebug3.cookie2.txt","w");
@@ -244,7 +239,6 @@ class ZsoltNet_GLSLabel_ShipmentController extends Mage_Adminhtml_Controller_Act
         fclose($file);
 
         $long       = Mage::getStoreConfig('glslabelmodule/glslabel/long_size');
-        $horPos     = Mage::getStoreConfig('glslabelmodule/glslabel/horizontal_position');
         $pdf        = new FPDIr();
         $pagecount  = $pdf->setSourceFile($tempfile);
         $tplidx     = $pdf->importPage(1, '/MediaBox');
@@ -252,7 +246,7 @@ class ZsoltNet_GLSLabel_ShipmentController extends Mage_Adminhtml_Controller_Act
 
         $pdf->addPage();
         $pdf->Rotate(90,$center,0);
-        $pdf->useTemplate($tplidx, -$center, $horPos, $long);
+        $pdf->useTemplate($tplidx, -$center, 0, $long);
 
         if ($orderId) {
             Mage::getSingleton('admin/session')->setGLSNumber($code);
@@ -384,10 +378,10 @@ class ZsoltNet_GLSLabel_ShipmentController extends Mage_Adminhtml_Controller_Act
                 fwrite($h,$content);
                 fclose($h);
             }
-
-            $pattern    = "/.*self.document.mainform.printit.value='(\d*)/";
-            preg_match($pattern, $content, $matches);
-            $code = $matches[1];
+            $pattern    = "self.document.mainform.printit.value='";
+            $pattern2   = "';self.document.mainform.submit();</script>";
+            $codelen    = strpos($content,$pattern2)-strpos($content,$pattern)-strlen($pattern);
+            $code       = substr($content, strpos($content,$pattern)+strlen($pattern), $codelen);
 
             if ($this->debug) {
                 $h      = fopen($this->debugdir."/glsdebug7.code.txt","w");
