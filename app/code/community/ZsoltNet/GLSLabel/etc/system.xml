@@ -1,0 +1,212 @@
+<config>
+    <tabs>
+        <zsoltnet translate="label" module="glslabel">
+            <label>ZsoltNet Extensions</label>
+            <sort_order>299</sort_order>
+        </zsoltnet>
+    </tabs>
+    <sections>
+        <glslabelmodule translate="label" module="glslabel">
+            <label>GLS Label</label>
+            <tab>zsoltnet</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <glslabel translate="label">
+                    <label>GLS Label Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <reports translate="label">
+                            <label>GLS Label Reports</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>glslabel/adminhtml_system_config_fieldset_reports</frontend_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </reports>
+                        <hostname translate="label">
+                            <label>GLS Hostname</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>46</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hostname>
+                        <timeout translate="label">
+                            <label>GLS Server Timeout (minute)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>47</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </timeout>
+                        <username translate="label">
+                            <label>GLS Username</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>48</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </username>
+                        <password translate="label">
+                            <label>GLS Password</label>
+                            <frontend_type>password</frontend_type>
+                            <sort_order>49</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </password>
+                        <sender_id translate="label">
+                            <label>GLS Sender ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_id>
+                        <useragent translate="label">
+                            <label>GLS User Agent</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>51</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </useragent>
+                        <personalservice translate="label">
+                            <label>Personal Pickup Name</label>
+                            <comment>
+                            <![CDATA[A személyes átvétel szolgáltatás megnevezése a szállítási módok között.]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>52</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </personalservice>
+                        <personalservicelabel translate="label">
+                            <label>Personal Pickup Label in Order Grid</label>
+                            <comment>
+                            <![CDATA[A rendelések admin oldalon ez a megnevezés szerepel a GLS azonosítónál a <strong>személyes átvétel esetén</strong>.]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>53</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </personalservicelabel>
+                        <specialshipping translate="label">
+                            <label>Special Delivery Name</label>
+                            <comment>
+                            <![CDATA[A speciális szállítás megnevezése a szállítási módok között.]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>54</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </specialshipping>
+                        <specialshippinglabel translate="label">
+                            <label>Special Delivery Label in Order Grid</label>
+                            <comment>
+                            <![CDATA[A rendelések admin oldalon ez a megnevezés szerepel a GLS azonosítónál a <strong>speciális szállítás esetén</strong>.]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </specialshippinglabel>
+                        <long_size translate="label">
+                            <label>GLS Label Long Size (mm)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>56</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </long_size>
+                        <tmpdir translate="label">
+                            <label>Temporary directory</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>57</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tmpdir>
+                        <debugdir translate="label">
+                            <label>Debug directory</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>58</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </debugdir>
+                        <sender_name translate="label">
+                            <label>Sender Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_name>
+                        <sender_address translate="label">
+                            <label>Sender Address</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>61</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_address>
+                        <sender_city translate="label">
+                            <label>Sender City</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>62</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_city>
+                        <sender_zipcode translate="label">
+                            <label>Sender Zipcode</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>63</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_zipcode>
+                        <sender_country translate="label">
+                            <label>Sender Country (2 letters)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>64</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_country>
+                        <sender_contact translate="label">
+                            <label>Sender Contact</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_contact>
+                        <sender_phone translate="label">
+                            <label>Sender Phone</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>66</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_phone>
+                    </fields>
+               </glslabel>
+           </groups>
+        </glslabelmodule>
+    </sections>
+</config>

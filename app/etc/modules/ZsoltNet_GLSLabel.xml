@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <ZsoltNet_GLSLabel>
+            <active>true</active>
+            <codePool>community</codePool>
+        </ZsoltNet_GLSLabel>
+    </modules>
+</config>

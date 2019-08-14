@@ -1,0 +1,18 @@
+{
+    "name": "OpenMageModuleFostering/ZsoltNet_GLSLabel",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "This extension connects the web-based label printing service of GLS Hungary to the Magento Commerce webshop.
+
+Ez a kiterjesztés GLS Hungary webes címkenyomtatás szolgáltatása és a Magento Commerce webshop összekapcsolására szolgál.",
+    "authors": [
+    {
+        "name": "Zsolt KOZAK",
+        "email": "kozakzs@gmail.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

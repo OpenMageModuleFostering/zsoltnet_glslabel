@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<layout>
+    <!-- main layout definition that adds the column -->
+    <add_order_grid_column_handle>
+        <reference name="sales_order.grid">
+            <action method="addColumnAfter">
+                <columnId>gls_id</columnId>
+                <arguments module="customer" translate="header">
+                    <header>GLS azonosító</header>
+                    <index>gls_id</index>
+                    <type>text</type>
+                    <width>20px</width>
+                    <renderer>ZsoltNet_GLSLabel_Block_Widget_Grid_Column_Renderer_GLSStatus</renderer>
+                </arguments>
+                <after>shipping_name</after>
+            </action>
+        </reference>
+    </add_order_grid_column_handle>
+
+    <!-- order grid action -->
+    <adminhtml_sales_order_grid>
+        <!-- apply the layout handle defined above -->
+        <update handle="add_order_grid_column_handle" />
+    </adminhtml_sales_order_grid>
+
+    <!-- order grid view action -->
+    <adminhtml_sales_order_index>
+        <!-- apply the layout handle defined above -->
+        <update handle="add_order_grid_column_handle" />
+        <reference name="head">
+            <action method="addJs"><script>jquery/jquery-1.4.2.min.js</script></action>
+            <action method="addJs"><script>jquery/jquery-noconflict.js</script></action>
+            <action method="addJs"><script>glslabel/jqModal.js</script></action>
+            <action method="addJs"><script>glslabel/glslabel.js</script></action>
+            <action method="addItem"><type>js_css</type><name>glslabel/glslabel.css</name></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="sales_order.grid.jquery" template="glslabel/sales_order_jquery.phtml"/>
+        </reference>
+    </adminhtml_sales_order_index>
+</layout>
