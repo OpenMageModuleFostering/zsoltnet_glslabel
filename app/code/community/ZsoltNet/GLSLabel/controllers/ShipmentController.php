@@ -239,6 +239,7 @@ class ZsoltNet_GLSLabel_ShipmentController extends Mage_Adminhtml_Controller_Act
         fclose($file);
 
         $long       = Mage::getStoreConfig('glslabelmodule/glslabel/long_size');
+        $horPos     = Mage::getStoreConfig('glslabelmodule/glslabel/horizontal_position');
         $pdf        = new FPDIr();
         $pagecount  = $pdf->setSourceFile($tempfile);
         $tplidx     = $pdf->importPage(1, '/MediaBox');
@@ -246,7 +247,7 @@ class ZsoltNet_GLSLabel_ShipmentController extends Mage_Adminhtml_Controller_Act
 
         $pdf->addPage();
         $pdf->Rotate(90,$center,0);
-        $pdf->useTemplate($tplidx, -$center, 0, $long);
+        $pdf->useTemplate($tplidx, -$center, $horPos, $long);
 
         if ($orderId) {
             Mage::getSingleton('admin/session')->setGLSNumber($code);

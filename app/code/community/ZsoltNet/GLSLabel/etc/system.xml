@@ -132,10 +132,21 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </long_size>
+                        <horizontal_position translate="label">
+                            <label>GLS Label Horizontal Position (mm)</label>
+                            <comment>
+                            <![CDATA[A címke horizontális pozíciója. Ha ez 0, akkor pont középen van a lapon. Ha -50, akkor a bal oldalra van pozícionálva.]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>57</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </horizontal_position>
                         <tmpdir translate="label">
                             <label>Temporary directory</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>57</sort_order>
+                            <sort_order>58</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -143,7 +154,7 @@
                         <debugdir translate="label">
                             <label>Debug directory</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>58</sort_order>
+                            <sort_order>59</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>

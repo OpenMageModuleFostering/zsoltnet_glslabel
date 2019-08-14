@@ -1,23 +1,130 @@
 <?xml version="1.0"?>
 <package>
     <name>ZsoltNet_GLSLabel</name>
-    <version>0.8.11</version>
+    <version>0.8.12</version>
     <stability>stable</stability>
     <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
     <channel>community</channel>
     <extends/>
-    <summary>This extension connects the web-based label printing service of GLS Hungary to the Magento Commerce webshop.&#xD;
+    <summary>This extension connects the web-based label printing service of GLS Hungary to the Magento Commerce webshop.</summary>
+    <description>&lt;h2&gt;Overview&lt;/h2&gt;&#xD;
 &#xD;
-Ez a kiterjeszt&#xE9;s GLS Hungary webes c&#xED;mkenyomtat&#xE1;s szolg&#xE1;ltat&#xE1;sa &#xE9;s a Magento Commerce webshop &#xF6;sszekapcsol&#xE1;s&#xE1;ra szolg&#xE1;l.</summary>
-    <description>This extension connects the web-based label printing service of GLS Hungary to the Magento Commerce webshop.&#xD;
+&lt;p&gt;&#xD;
+This extension connects the web-based label printing service of GLS Hungary to the Magento Commerce webshop. The details of this extensions will be in Hungarian only.&#xD;
+&lt;/p&gt;&#xD;
 &#xD;
+&lt;h2&gt;Features&lt;/h2&gt;&#xD;
+&#xD;
+&lt;ul&gt;&#xD;
+&lt;li&gt;it connects the label printing service of GLS Hungary (&lt;a href="http://connect.gls-hungary.com/"&gt;http://connect.gls-hungary.com/&lt;/a&gt;) with the Magento admin interface&lt;/li&gt;&#xD;
+&lt;li&gt;it sets the shipping ID of the order using the GLS shipping ID, one can reprint the label from the Shipments tab&lt;/li&gt;&#xD;
+&lt;li&gt;massprint function for printing several labels together&lt;/li&gt;&#xD;
+&lt;li&gt;enhanced order grid to show the GLS shipping ID&lt;/li&gt;&#xD;
+&lt;li&gt;supporting another two shipping methods (personal pickup, special delivery)&lt;/li&gt;&#xD;
+&lt;li&gt;order tracking by using the tracking system of GLS Hungary&lt;/li&gt;&#xD;
+&lt;li&gt;setting order status to 'ready' automatically by querying GLS Hungary tracking system&lt;/li&gt;&#xD;
+&lt;li&gt;report about the cash on delivery orders (the modul using 2 database tables, one should use external application to upload data about the shipped orders)&lt;/li&gt;&#xD;
+&lt;/ul&gt;&#xD;
+&#xD;
+&lt;h2&gt;Configuration&lt;/h2&gt;&#xD;
+&#xD;
+&lt;p&gt;&#xD;
+Settings of the extension are available through &lt;i&gt;System &amp;gt; Configurtaion &amp;gt; Zsoltnet Extensions &amp;gt; GLS label&lt;/i&gt; page. These are the followings.&#xD;
+&lt;/p&gt;&#xD;
+&#xD;
+&lt;ul&gt;&#xD;
+&lt;li&gt;GLS Hostname -&amp;gt; hostname of GLS Connect (connect.gls-hungary.com)&lt;/li&gt;&#xD;
+&lt;li&gt;GLS Server Timeout (minute) -&amp;gt; after this amount of time the extension logs in again through GLS Connect&lt;/li&gt;&#xD;
+&lt;li&gt;GLS Username -&amp;gt; username for GLS Connect&lt;/li&gt;&#xD;
+&lt;li&gt;GLS Password -&amp;gt; password for GLS Connect&lt;/li&gt;&#xD;
+&lt;li&gt;GLS Sender ID -&amp;gt; sender ID for GLS Connect&lt;/li&gt;&#xD;
+&lt;li&gt;GLS User Agent -&amp;gt; the extension uses this UserAgent when connects to GLS Connect&lt;/li&gt;&#xD;
+&lt;li&gt;Personal Pickup Name -&amp;gt; The name of the personal pickup service in the shipping methods.&lt;/li&gt;&#xD;
+&lt;li&gt;Personal Pickup Label in Order Grid -&amp;gt; This label appears in the order grid in the GLS ID column when personal pickup is the shipping method.&lt;/li&gt;&#xD;
+&lt;li&gt;Special Delivery Name -&amp;gt; The name of special delivery in the shipping methods.&lt;/li&gt;&#xD;
+&lt;li&gt;Special Delivery Label in Order Grid -&amp;gt; This label appears in the order grid in the GLS ID column when special delivery is the shipping method.&lt;/li&gt;&#xD;
+&lt;li&gt;GLS Label Long Size (mm) -&amp;gt; Printing setting, you should test it with your printer, but the default 130 mm should be okay.&lt;/li&gt;&#xD;
+&lt;li&gt;GLS Label Horizontal Position (mm) -&amp;gt; Printing setting, you should test it with your printer, but the default -50 mm should be okay. If this value is -50 mm, it's positioned to the left side of the page, if it's 0 mm, it's in the center of the page.&lt;/li&gt;&#xD;
+&lt;li&gt;Temporary Directory -&amp;gt; Work directory for attaching the labels&lt;/li&gt;&#xD;
+&lt;li&gt;Debug Directory-&amp;gt; Directory for debugging information&lt;/li&gt;&#xD;
+&lt;li&gt;Sender Name -&amp;gt; sender name on the label&lt;/li&gt;&#xD;
+&lt;li&gt;Sender Address -&amp;gt; sender address on the label&lt;/li&gt;&#xD;
+&lt;li&gt;Sender City -&amp;gt; sender city on the label&lt;/li&gt;&#xD;
+&lt;li&gt;Sender  Zipcode -&amp;gt; sender zipcode on the label&lt;/li&gt;&#xD;
+&lt;li&gt;Sender Country (2 letters) -&amp;gt; sender country, 2 letters code&lt;/li&gt;&#xD;
+&lt;li&gt;Sender Contact -&amp;gt; contact name&lt;/li&gt;&#xD;
+&lt;li&gt;Sender Phone -&amp;gt; the contact's phone number&lt;/li&gt;&#xD;
+&lt;/ul&gt;&#xD;
+&#xD;
+&lt;h2&gt;Warranty&lt;/h2&gt;&#xD;
+&#xD;
+&lt;p&gt;&#xD;
+&lt;strong&gt;THIS SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHOR BE HELD LIABLE FOR ANY DAMAGES ARISING FROM THE USE OF THE SOFTWARE.&lt;/strong&gt;&#xD;
+&lt;/p&gt;&#xD;
+&#xD;
+&lt;hr /&gt;&#xD;
+&#xD;
+&lt;h2&gt;&#xC1;ttekint&#xE9;s&lt;/h2&gt;&#xD;
+&#xD;
+&lt;p&gt;&#xD;
 Ez a kiterjeszt&#xE9;s GLS Hungary webes c&#xED;mkenyomtat&#xE1;s szolg&#xE1;ltat&#xE1;sa &#xE9;s a Magento Commerce webshop &#xF6;sszekapcsol&#xE1;s&#xE1;ra szolg&#xE1;l.&#xD;
-</description>
-    <notes>fixing virtual products</notes>
+&lt;/p&gt;&#xD;
+&#xD;
+&lt;h2&gt;Tulajdons&#xE1;gok&lt;/h2&gt;&#xD;
+&#xD;
+&lt;ul&gt;&#xD;
+&lt;li&gt;a GLS Hungary webes c&#xED;mkenyomtat&#xE1;s szolg&#xE1;ltat&#xE1;s&#xE1;t (&lt;a href="http://connect.gls-hungary.com/"&gt;http://connect.gls-hungary.com/&lt;/a&gt;) teszi lehet&#x151;v&#xE9; a Magento admin fel&#xFC;let&#xE9;r&#x151;l&lt;/li&gt;&#xD;
+&lt;li&gt;a rendel&#xE9;shez hozz&#xE1;kapcsolja a GLS sz&#xE1;ll&#xED;t&#xE1;si azonos&#xED;t&#xF3;j&#xE1;t (csomagsz&#xE1;m), a c&#xED;mke &#xFA;jranyomtathat&#xF3; a Sz&#xE1;ll&#xED;tm&#xE1;nyok f&#xFC;l&#xF6;n kereszt&#xFC;l&lt;/li&gt;&#xD;
+&lt;li&gt;t&#xF6;bb rendel&#xE9;s c&#xED;mk&#xE9;j&#xE9;nek egyben nyomtat&#xE1;sa (massprint)&lt;/li&gt;&#xD;
+&lt;li&gt;a rendel&#xE9;sek list&#xE1;z&#xF3; oldal&#xE1;n (order grid) a rendel&#xE9;sek GLS azonos&#xED;t&#xF3;inak megjelen&#xED;t&#xE9;se&lt;/li&gt;&#xD;
+&lt;li&gt;tov&#xE1;bbi kett&#x151; sz&#xE1;ll&#xED;t&#xE1;si t&#xED;pus (szem&#xE9;lyes &#xE1;tv&#xE9;tel, speci&#xE1;lis sz&#xE1;ll&#xED;t&#xE1;s) t&#xE1;mogat&#xE1;sa a rendel&#xE9;sek list&#xE1;z&#xF3; oldal&#xE1;n (GLS azonos&#xED;t&#xF3; helyett a m&#xE1;sik kett&#x151; rendel&#xE9;s megnevez&#xE9;s&#xE9;nek megjelen&#xED;t&#xE9;se)&lt;/li&gt;&#xD;
+&lt;li&gt;a csomag nyomk&#xF6;vet&#xE9;se a rendel&#xE9;sek list&#xE1;z&#xF3; oldal&#xE1;r&#xF3;l felugr&#xF3; ablakban&lt;/li&gt;&#xD;
+&lt;li&gt;a csomag st&#xE1;tusz&#xE1;nak lek&#xE9;rdez&#xE9;se naponta h&#xE1;rom alkalommal, a kisz&#xE1;ll&#xED;tott csomag st&#xE1;tusz&#xE1;nak &#xE1;t&#xE1;ll&#xED;t&#xE1;sa 'k&#xE9;sz' st&#xE1;tuszra&lt;/li&gt;&#xD;
+&lt;li&gt;report megjelen&#xED;t&#xE9;se adatb&#xE1;zis alapj&#xE1;n a k&#xE9;zbes&#xED;tett ut&#xE1;nv&#xE9;tes csomagokr&#xF3;l (az adatb&#xE1;zist k&#xFC;ls&#x151; alkalmaz&#xE1;ssal t&#xF6;lteni kell a GLS Excelreportjai alapj&#xE1;n, a modul csak megjelen&#xED;t&#xE9;st v&#xE9;gez)&lt;/li&gt;&#xD;
+&lt;/ul&gt;&#xD;
+&#xD;
+&lt;h2&gt;Konfigur&#xE1;l&#xE1;s&lt;/h2&gt;&#xD;
+&#xD;
+&lt;p&gt;&#xD;
+A kiterjeszt&#xE9;s be&#xE1;ll&#xED;t&#xE1;sai a &lt;i&gt;Rendszer &amp;gt; Be&#xE1;ll&#xED;t&#xE1;sok &amp;gt; Zsoltnet Extensions &amp;gt; GLS c&#xED;mke&lt;/i&gt; oldalon tal&#xE1;lhat&#xF3;ak. Ezek a k&#xF6;vetkez&#x151;k.&#xD;
+&lt;/p&gt;&#xD;
+&#xD;
+&lt;ul&gt;&#xD;
+&lt;li&gt;GLS hosztn&#xE9;v -&amp;gt; a GLS Connect c&#xED;me (connect.gls-hungary.com)&lt;/li&gt;&#xD;
+&lt;li&gt;GLS szerver timeout (perc) -&amp;gt; ennyi id&#x151; ut&#xE1;n a modul &#xFA;jra bel&#xE9;p a GLS Connecten&lt;/li&gt;&#xD;
+&lt;li&gt;GLS felhaszn&#xE1;l&#xF3;i n&#xE9;v -&amp;gt; felhaszn&#xE1;l&#xF3;i n&#xE9;v a GLS Connecthez&lt;/li&gt;&#xD;
+&lt;li&gt;GLS jelsz&#xF3; -&amp;gt; jelsz&#xF3; a GLS Connecthez&lt;/li&gt;&#xD;
+&lt;li&gt;GLS felad&#xF3; azonos&#xED;t&#xF3; -&amp;gt; az azonos&#xED;t&#xF3; a GLS Connect c&#xED;mkenyomtat&#xF3; oldal&#xE1;r&#xE1;nak forr&#xE1;s&#xE1;b&#xF3;l bel&#xE9;p&#xE9;s ut&#xE1;n kileshet&#x151; (senderid a neve)&lt;/li&gt;&#xD;
+&lt;li&gt;GLS User Agent -&amp;gt; UserAgent, amivel a kiterjeszt&#xE9;s azonos&#xED;tja mag&#xE1;t a GLS Connect fel&#xE9;. Tetsz&#x151;leges lehet.&lt;/li&gt;&#xD;
+&lt;li&gt;Szem&#xE9;lyes &#xE1;tv&#xE9;tel megnevez&#xE9;se -&amp;gt; A szem&#xE9;lyes &#xE1;tv&#xE9;tel szolg&#xE1;ltat&#xE1;s megnevez&#xE9;se a sz&#xE1;ll&#xED;t&#xE1;si m&#xF3;dok k&#xF6;z&#xF6;tt.&lt;/li&gt;&#xD;
+&lt;li&gt;A szem&#xE9;lyes &#xE1;tv&#xE9;tel c&#xED;mk&#xE9;je az admin oldali gridben -&amp;gt; A rendel&#xE9;sek admin oldalon ez a megnevez&#xE9;s szerepel a GLS azonos&#xED;t&#xF3;n&#xE1;l a szem&#xE9;lyes &#xE1;tv&#xE9;tel eset&#xE9;n.&lt;/li&gt;&#xD;
+&lt;li&gt;A speci&#xE1;lis sz&#xE1;ll&#xED;t&#xE1;s megnevez&#xE9;se -&amp;gt; A speci&#xE1;lis sz&#xE1;ll&#xED;t&#xE1;s megnevez&#xE9;se a sz&#xE1;ll&#xED;t&#xE1;si m&#xF3;dok k&#xF6;z&#xF6;tt.&lt;/li&gt;&#xD;
+&lt;li&gt;A speci&#xE1;lis sz&#xE1;ll&#xED;t&#xE1;s c&#xED;mk&#xE9;je az admin oldali gridben -&amp;gt; A rendel&#xE9;sek admin oldalon ez a megnevez&#xE9;s szerepel a GLS azonos&#xED;t&#xF3;n&#xE1;l a speci&#xE1;lis sz&#xE1;ll&#xED;t&#xE1;s eset&#xE9;n.&lt;/li&gt;&#xD;
+&lt;li&gt;GLS c&#xED;mke hosszabb oldala (mm) -&amp;gt; Nyomtat&#xE1;si be&#xE1;ll&#xED;t&#xE1;s, &#xE9;rdemes tesztelni adott nyomtat&#xF3;hoz, de a 130 mm-es default &#xE9;rt&#xE9;k j&#xF3; lehet.&lt;/li&gt;&#xD;
+&lt;li&gt;GLS c&#xED;mke horizont&#xE1;lis poz&#xED;ci&#xF3; (mm) -&amp;gt; Nyomtat&#xE1;si be&#xE1;ll&#xED;t&#xE1;s, &#xE9;rdemes tesztelni adott nyomtat&#xF3;hoz, de a -50 mm-es default &#xE9;rt&#xE9;k j&#xF3; lehet. Ha ez az &#xE9;rt&#xE9;k -50 mm, az oldal bal sz&#xE9;l&#xE9;re van poz&#xED;cion&#xE1;lva, ha 0 mm, az oldal k&#xF6;zep&#xE9;n van a c&#xED;mke.&lt;/li&gt;&#xD;
+&lt;li&gt;&#xC1;tmeneti k&#xF6;nyvt&#xE1;r -&amp;gt; Munkak&#xF6;nyvt&#xE1;r a c&#xED;mk&#xE9;k &#xF6;sszef&#x171;z&#xE9;s&#xE9;hez.&lt;/li&gt;&#xD;
+&lt;li&gt;K&#xF6;nyvt&#xE1;r a hibakeres&#xE9;shez -&amp;gt; Munkak&#xF6;nyvt&#xE1;r hibakeres&#xE9;si inform&#xE1;ci&#xF3;k t&#xE1;rol&#xE1;s&#xE1;hoz.&lt;/li&gt;&#xD;
+&lt;li&gt;Felad&#xF3; neve -&amp;gt; a felad&#xF3; neve a c&#xED;mk&#xE9;n&lt;/li&gt;&#xD;
+&lt;li&gt;Felad&#xF3; c&#xED;me (utca, h&#xE1;zsz&#xE1;m) -&amp;gt; a felad&#xF3; c&#xED;me a c&#xED;mk&#xE9;n&lt;/li&gt;&#xD;
+&lt;li&gt;Felad&#xF3; v&#xE1;ros -&amp;gt; a felad&#xF3; c&#xED;m&#xE9;b&#x151;l a v&#xE1;ros megnevez&#xE9;se a c&#xED;mk&#xE9;n&lt;/li&gt;&#xD;
+&lt;li&gt;Felad&#xF3; ir&#xE1;ny&#xED;t&#xF3;sz&#xE1;m -&amp;gt; a felad&#xF3; ir&#xE1;ny&#xED;t&#xF3;sz&#xE1;ma a c&#xED;mk&#xE9;n&lt;/li&gt;&#xD;
+&lt;li&gt;Felad&#xF3; orsz&#xE1;g (2 bet&#x171;) -&amp;gt; a felad&#xF3; orsz&#xE1;g&#xE1;nak k&#xE9;tbet&#x171;s k&#xF3;dja, HU, ha Magyarorsz&#xE1;gon adj&#xE1;k &#xE1;t a csomagokat a GLS-nek&lt;/li&gt;&#xD;
+&lt;li&gt;Felad&#xF3; kapcsolattart&#xF3; -&amp;gt; a felad&#xF3; kapcsolattart&#xF3;j&#xE1;nak megnevez&#xE9;se&lt;/li&gt;&#xD;
+&lt;li&gt;Felad&#xF3; telefonsz&#xE1;m -&amp;gt; a felad&#xF3; kapcsolattart&#xF3;j&#xE1;nak telefonsz&#xE1;ma&lt;/li&gt;&#xD;
+&lt;/ul&gt;&#xD;
+&#xD;
+&lt;h2&gt;Garancia&lt;/h2&gt;&#xD;
+&#xD;
+&lt;p&gt;&#xD;
+&lt;strong&gt;A GLSLABEL MAGENTO-KITERJESZT&#xC9;S M&#x170;K&#xD6;D&#xC9;S&#xC9;&#xC9;RT A FEJLESZT&#x150; SEMMILYEN GARANCI&#xC1;T NEM V&#xC1;LLAL, A KITERJESZT&#xC9;ST MINDENKI SAJ&#xC1;T FELEL&#x150;SS&#xC9;G&#xC9;RE HASZN&#xC1;LJA!&lt;/strong&gt;&#xD;
+&lt;/p&gt;</description>
+    <notes> adding horizontal position&#xD;
+&#xD;
+ horizont&#xE1;lis poz&#xED;ci&#xF3; hozz&#xE1;&#xE1;d&#xE1;sa</notes>
     <authors><author><name>Zsolt KOZAK</name><user>kozakzs</user><email>kozakzs@gmail.com</email></author></authors>
-    <date>2014-01-10</date>
-    <time>21:52:17</time>
-    <contents><target name="magecommunity"><dir name="ZsoltNet"><dir name="GLSLabel"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Fieldset"><file name="Reports.php" hash="e7356fcd76a67b880f3eafbb81f70d77"/></dir></dir></dir></dir><dir name="Sales"><dir name="Order"><dir name="Shipment"><file name="View.php" hash="36614b944fd5236487bf8e5676a7491e"/></dir></dir></dir><dir name="Widget"><dir name="Grid"><dir name="Column"><dir name="Renderer"><file name="GLSStatus.php" hash="978fa8fc4bd91fda2bb1bcb68f65e7c2"/></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="79e8e600a5609c87db8851074eadb7a6"/></dir><dir name="Model"><file name="Deliveryupdater.php" hash="a33d73b05438c68be140c204026e5d81"/><dir name="Mysql4"><dir name="Order"><file name="Shipment.php" hash="28c4d516b8f347c686877237c7c61c9d"/></dir></dir><file name="Observer.php" hash="b3dc05ce796997610648f828b716dd1c"/></dir><dir name="controllers"><file name="HttpClient.class.php" hash="443875a01cecf4c847c2c6220d6db9aa"/><file name="ReportsController.php" hash="f1a7c2a937dc7584ddc613219c44d48c"/><file name="ShipmentController.php" hash="91ed5a69b4dd561c2126d11264786cd1"/><dir name="pdf"><file name="concat_pdf.php" hash="7679aec4c1f9932cf436f738ac3c79a5"/><dir name="filters"><file name="FilterASCII85.php" hash="277bd932f5016a7cd1196bd782bde05f"/><file name="FilterASCII85_FPDI.php" hash="e74e259d283863f3d562bcc23e0438a5"/><file name="FilterLZW.php" hash="b621e357f3f066b6255e2cfd5626dcd9"/><file name="FilterLZW_FPDI.php" hash="35b5d8194d4779ec2dc373ed5772876e"/></dir><dir name="font"><file name="courier.php" hash="fc24409ed4079afe5a49dc21bfc18dc6"/><file name="desktop.ini" hash="c8595cf1e4e6603719df1cfc48d43fa4"/><file name="helvetica.php" hash="18a86c71e4288c7cfe6ad5116fe097c3"/><file name="helveticab.php" hash="536316f08a186e84a7c43cad3c09a1a5"/><file name="helveticabi.php" hash="8ebacb40c1a5f8a65cb311d6bd131216"/><file name="helveticai.php" hash="54e8686215214fc28e4a1eb9e9a3b05b"/><dir name="makefont"><file name="cp1250.map" hash="8a021bf2c9796273f4b2c3824efefc1d"/><file name="cp1251.map" hash="ee2f10b8198819a33d4aa566a7df4ec6"/><file name="cp1252.map" hash="8d7358daa8b750747694e822111898f9"/><file name="cp1253.map" hash="907301f283e7457d037fee0adb5ce187"/><file name="cp1254.map" hash="46e48666d54b3bc0d7eba59e1fc768f3"/><file name="cp1255.map" hash="c469cfdac7010e50b7fbcabaaf1393b1"/><file name="cp1257.map" hash="fe87c493f46ddfd8b57212cbc52e25ac"/><file name="cp1258.map" hash="86a4dee852783cc5b85ac83a82729d47"/><file name="cp874.map" hash="4fbafebd9ea29f4e10889749ec414113"/><file name="iso-8859-1.map" hash="53bffea6677269f073516bb10d28de02"/><file name="iso-8859-11.map" hash="83ecaf01ee009dc60c74e4fdaff0aa26"/><file name="iso-8859-15.map" hash="3d09f07dd446c6a2fc13a609c084e854"/><file name="iso-8859-16.map" hash="b56b0749d1ac137491e3714039009960"/><file name="iso-8859-2.map" hash="47507c221cb986421905861794102889"/><file name="iso-8859-4.map" hash="0355d40c58aa1db273ced4e7697b15b0"/><file name="iso-8859-5.map" hash="82a2003dbd3b5e359ea6b19898d4bc89"/><file name="iso-8859-7.map" hash="d0712d80739797b3495f67490d328d08"/><file name="iso-8859-9.map" hash="8647a52d390b37e26ed05e5ed6793b76"/><file name="koi8-r.map" hash="04f520a75d940d47dec77f1cc0539fbb"/><file name="koi8-u.map" hash="9046b7222af56cb6bbc349cac9dbabdf"/><file name="makefont.php" hash="fd9cb1c061b332b05bfa4ba8fde0ca3f"/></dir><file name="symbol.php" hash="56b0bdc3e447810455731272a60bb343"/><file name="times.php" hash="bbf949b03a5c8e5095b8c712de28856d"/><file name="timesb.php" hash="6704a156b70e2c1cca70b2764563b934"/><file name="timesbi.php" hash="72952b50ab13815c82aa984d76516e13"/><file name="timesi.php" hash="4ff5b220d7c754e2150c2d0ab7f7a499"/><file name="zapfdingbats.php" hash="05296fa60133b7a415237b2083f1a748"/></dir><file name="fpdf.php" hash="67dc3c1ca8030c0d03bd1e6165095b36"/><file name="fpdf_tpl.php" hash="3e0c99705b5e2a6ce3a310ffb3e63be7"/><file name="fpdi.php" hash="463f986c1e95302fdd045b956e0b2865"/><file name="fpdi2tcpdf_bridge.php" hash="28e0a17da715fe788647f5ef422575b5"/><file name="fpdi_pdf_parser.php" hash="d317e3a9f73aa04ece72eba687dfaef0"/><file name="pdf_context.php" hash="a0e004618db109c79e7504d3c9fe4c8b"/><file name="pdf_parser.php" hash="fbd3aae9059ec9c752c34366e9ef8ca7"/><file name="rotation.php" hash="a669ebb7f4f27334b0e0f60023663e17"/></dir></dir><dir name="etc"><file name="config.xml" hash="159acf9f13a2f21aeb4c80f5060b7b43"/><file name="system.xml" hash="cc2cd5c105dfb7e1a11fa22dd503d0a1"/></dir><dir name="sql"><dir name="zsoltnet_glslabel_setup"><file name="mysql4-install-0.5.9.php" hash="ec89513e45e2aec12e50a31277703700"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="ZsoltNet_GLSLabel.xml" hash="9f6dd359a89278e5d9def472d82a2064"/></dir></target><target name="magelocale"><dir name="hu_HU"><file name="ZsoltNet_GLSLabel.csv" hash="af6eb257e534bd4063e6487071470829"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="zsoltnet"><file name="glslabel.xml" hash="a6c58a7ce874fd2d6dfde51fc4a85b1d"/></dir></dir><dir name="template"><dir name="glslabel"><file name="sales_order_jquery.phtml" hash="2417ca05d414266efc0bfa8270ab2196"/><dir><dir name="system"><dir name="config"><dir name="fieldset"><file name="reports.phtml" hash="b534d7ce631d478d5caf2b4786597297"/></dir></dir></dir></dir></dir></dir></dir></dir></dir></target><target name="mageweb"><dir name="js"><dir name="glslabel"><file name="asc.gif" hash="f8a1940c9cf44ab8870319169f3a14ff"/><file name="bg.gif" hash="c01ad2e7c59d1a20a433cb873c21bd88"/><file name="desc.gif" hash="a54846803de3cc786eec3d69f9ac2d38"/><file name="glslabel.css" hash="6f4232da13f4acd725051344323b361e"/><file name="glslabel.js" hash="eacf46c027d39a591358ce6a82e0ebf0"/><file name="glsreports.css" hash="8f3f3ca7d488c7d69cc35257b60c26bc"/><file name="jqModal.js" hash="f901bbdab848edc289188dab74ba78da"/><file name="jquery.tablesorter.min.js" hash="94e78a05e1066b691f6d56b2ced5f385"/><file name="jquery.tablesorter.pager.js" hash="df05218458ff2e243675369f01464c5d"/><dir><dir name="pager"><file name="first.png" hash="5518e1f43d359f0f3893b6a2414ffd40"/><file name="last.png" hash="055e97df2d56526a055e33ce811d9d24"/><file name="next.png" hash="6178940beecadaa5580fcc4526c59c08"/><file name="prev.png" hash="1448e9b9ad79326f907f1d3f011b39e3"/></dir></dir></dir><dir name="jquery"><file name="jquery-1.4.2.min.js" hash="10092eee563dec2dca82b77d2cf5a1ae"/><file name="jquery-noconflict.js" hash="3179f2255b046d5f2e9a71e365287bef"/></dir></dir></target></contents>
+    <date>2015-05-31</date>
+    <time>17:32:29</time>
+    <contents><target name="magecommunity"><dir name="ZsoltNet"><dir name="GLSLabel"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Fieldset"><file name="Reports.php" hash="e7356fcd76a67b880f3eafbb81f70d77"/></dir></dir></dir></dir><dir name="Sales"><dir name="Order"><dir name="Shipment"><file name="View.php" hash="36614b944fd5236487bf8e5676a7491e"/></dir></dir></dir><dir name="Widget"><dir name="Grid"><dir name="Column"><dir name="Renderer"><file name="GLSStatus.php" hash="978fa8fc4bd91fda2bb1bcb68f65e7c2"/></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="79e8e600a5609c87db8851074eadb7a6"/></dir><dir name="Model"><file name="Deliveryupdater.php" hash="a33d73b05438c68be140c204026e5d81"/><dir name="Mysql4"><dir name="Order"><file name="Shipment.php" hash="28c4d516b8f347c686877237c7c61c9d"/></dir></dir><file name="Observer.php" hash="b3dc05ce796997610648f828b716dd1c"/></dir><dir name="controllers"><file name="HttpClient.class.php" hash="443875a01cecf4c847c2c6220d6db9aa"/><file name="ReportsController.php" hash="f1a7c2a937dc7584ddc613219c44d48c"/><file name="ShipmentController.php" hash="4ba7e5e0de49eae9cc8d3377283b327c"/><dir name="pdf"><file name="concat_pdf.php" hash="7679aec4c1f9932cf436f738ac3c79a5"/><dir name="filters"><file name="FilterASCII85.php" hash="277bd932f5016a7cd1196bd782bde05f"/><file name="FilterASCII85_FPDI.php" hash="e74e259d283863f3d562bcc23e0438a5"/><file name="FilterLZW.php" hash="b621e357f3f066b6255e2cfd5626dcd9"/><file name="FilterLZW_FPDI.php" hash="35b5d8194d4779ec2dc373ed5772876e"/></dir><dir name="font"><file name="courier.php" hash="fc24409ed4079afe5a49dc21bfc18dc6"/><file name="desktop.ini" hash="c8595cf1e4e6603719df1cfc48d43fa4"/><file name="helvetica.php" hash="18a86c71e4288c7cfe6ad5116fe097c3"/><file name="helveticab.php" hash="536316f08a186e84a7c43cad3c09a1a5"/><file name="helveticabi.php" hash="8ebacb40c1a5f8a65cb311d6bd131216"/><file name="helveticai.php" hash="54e8686215214fc28e4a1eb9e9a3b05b"/><dir name="makefont"><file name="cp1250.map" hash="8a021bf2c9796273f4b2c3824efefc1d"/><file name="cp1251.map" hash="ee2f10b8198819a33d4aa566a7df4ec6"/><file name="cp1252.map" hash="8d7358daa8b750747694e822111898f9"/><file name="cp1253.map" hash="907301f283e7457d037fee0adb5ce187"/><file name="cp1254.map" hash="46e48666d54b3bc0d7eba59e1fc768f3"/><file name="cp1255.map" hash="c469cfdac7010e50b7fbcabaaf1393b1"/><file name="cp1257.map" hash="fe87c493f46ddfd8b57212cbc52e25ac"/><file name="cp1258.map" hash="86a4dee852783cc5b85ac83a82729d47"/><file name="cp874.map" hash="4fbafebd9ea29f4e10889749ec414113"/><file name="iso-8859-1.map" hash="53bffea6677269f073516bb10d28de02"/><file name="iso-8859-11.map" hash="83ecaf01ee009dc60c74e4fdaff0aa26"/><file name="iso-8859-15.map" hash="3d09f07dd446c6a2fc13a609c084e854"/><file name="iso-8859-16.map" hash="b56b0749d1ac137491e3714039009960"/><file name="iso-8859-2.map" hash="47507c221cb986421905861794102889"/><file name="iso-8859-4.map" hash="0355d40c58aa1db273ced4e7697b15b0"/><file name="iso-8859-5.map" hash="82a2003dbd3b5e359ea6b19898d4bc89"/><file name="iso-8859-7.map" hash="d0712d80739797b3495f67490d328d08"/><file name="iso-8859-9.map" hash="8647a52d390b37e26ed05e5ed6793b76"/><file name="koi8-r.map" hash="04f520a75d940d47dec77f1cc0539fbb"/><file name="koi8-u.map" hash="9046b7222af56cb6bbc349cac9dbabdf"/><file name="makefont.php" hash="fd9cb1c061b332b05bfa4ba8fde0ca3f"/></dir><file name="symbol.php" hash="56b0bdc3e447810455731272a60bb343"/><file name="times.php" hash="bbf949b03a5c8e5095b8c712de28856d"/><file name="timesb.php" hash="6704a156b70e2c1cca70b2764563b934"/><file name="timesbi.php" hash="72952b50ab13815c82aa984d76516e13"/><file name="timesi.php" hash="4ff5b220d7c754e2150c2d0ab7f7a499"/><file name="zapfdingbats.php" hash="05296fa60133b7a415237b2083f1a748"/></dir><file name="fpdf.php" hash="67dc3c1ca8030c0d03bd1e6165095b36"/><file name="fpdf_tpl.php" hash="3e0c99705b5e2a6ce3a310ffb3e63be7"/><file name="fpdi.php" hash="463f986c1e95302fdd045b956e0b2865"/><file name="fpdi2tcpdf_bridge.php" hash="28e0a17da715fe788647f5ef422575b5"/><file name="fpdi_pdf_parser.php" hash="d317e3a9f73aa04ece72eba687dfaef0"/><file name="pdf_context.php" hash="a0e004618db109c79e7504d3c9fe4c8b"/><file name="pdf_parser.php" hash="fbd3aae9059ec9c752c34366e9ef8ca7"/><file name="rotation.php" hash="a669ebb7f4f27334b0e0f60023663e17"/></dir></dir><dir name="etc"><file name="config.xml" hash="25b32bc5cca00efa24c5807a7ba66459"/><file name="system.xml" hash="8b16d0537705b48abd49730f9de75445"/></dir><dir name="sql"><dir name="zsoltnet_glslabel_setup"><file name="mysql4-install-0.5.9.php" hash="ec89513e45e2aec12e50a31277703700"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="ZsoltNet_GLSLabel.xml" hash="9f6dd359a89278e5d9def472d82a2064"/></dir></target><target name="magelocale"><dir name="hu_HU"><file name="ZsoltNet_GLSLabel.csv" hash="835b3b92e47d7e7af58e0ee36199f8f7"/></dir></target><target name="mageweb"><dir name="js"><dir name="glslabel"><file name="asc.gif" hash="f8a1940c9cf44ab8870319169f3a14ff"/><file name="bg.gif" hash="c01ad2e7c59d1a20a433cb873c21bd88"/><file name="desc.gif" hash="a54846803de3cc786eec3d69f9ac2d38"/><file name="glslabel.css" hash="6f4232da13f4acd725051344323b361e"/><file name="glslabel.js" hash="eacf46c027d39a591358ce6a82e0ebf0"/><file name="glsreports.css" hash="8f3f3ca7d488c7d69cc35257b60c26bc"/><file name="jqModal.js" hash="f901bbdab848edc289188dab74ba78da"/><file name="jquery.tablesorter.min.js" hash="94e78a05e1066b691f6d56b2ced5f385"/><file name="jquery.tablesorter.pager.js" hash="df05218458ff2e243675369f01464c5d"/><dir name="pager"><file name="first.png" hash="5518e1f43d359f0f3893b6a2414ffd40"/><file name="last.png" hash="055e97df2d56526a055e33ce811d9d24"/><file name="next.png" hash="6178940beecadaa5580fcc4526c59c08"/><file name="prev.png" hash="1448e9b9ad79326f907f1d3f011b39e3"/></dir></dir><dir name="jquery"><file name="jquery-1.4.2.min.js" hash="10092eee563dec2dca82b77d2cf5a1ae"/><file name="jquery-noconflict.js" hash="3179f2255b046d5f2e9a71e365287bef"/></dir></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
