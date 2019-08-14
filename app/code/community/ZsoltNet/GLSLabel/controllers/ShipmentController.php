@@ -183,7 +183,12 @@ class ZsoltNet_GLSLabel_ShipmentController extends Mage_Adminhtml_Controller_Act
         }
 
         $cookies= $client->getHeader('set-cookie');
-        $cookie = substr($cookies, strpos($cookies,"=")+1, $this->cookielength);
+        if(is_array($cookies)) {
+            $cookie = $cookies[0];
+            $cookie = substr($cookie, strpos($cookie,"=")+1, $this->cookielength);
+        } else {
+            $cookie = substr($cookies, strpos($cookies,"=")+1, $this->cookielength);
+        }
         $client->setCookies(array('PHPSESSID'=>"".$cookie));
         if ($this->debug) {
             $h = fopen($this->debugdir."/glsdebug3.cookie2.txt","w");
