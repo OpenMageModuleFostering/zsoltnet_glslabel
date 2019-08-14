@@ -6,6 +6,10 @@ class ZsoltNet_GLSLabel_Block_Widget_Grid_Column_Renderer_GLSStatus extends Mage
     public function render(Varien_Object $row)
     {
         $order      = Mage::getModel('sales/order')->loadByIncrementId($row->getData('increment_id'));
+        if (!$order->getShippingCarrier()) {
+            //virtual product
+            return parent::render($row);
+        }
         $isPersonal = ($order->getShippingCarrier()->getConfigData('title')==Mage::getStoreConfig('glslabelmodule/glslabel/personalservice', $order->getStoreId()));
         $isSpecial  = ($order->getShippingCarrier()->getConfigData('title')==Mage::getStoreConfig('glslabelmodule/glslabel/specialshipping', $order->getStoreId()));
         $id         = 0;
