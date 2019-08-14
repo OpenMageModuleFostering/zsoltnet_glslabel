@@ -10,6 +10,7 @@ class ZsoltNet_GLSLabel_Block_Widget_Grid_Column_Renderer_GLSStatus extends Mage
         $isSpecial  = ($order->getShippingCarrier()->getConfigData('title')==Mage::getStoreConfig('glslabelmodule/glslabel/specialshipping', $order->getStoreId()));
         $id         = 0;
         $processing = false;
+        $isCompleted= false;
 
         foreach ($order->getShipmentsCollection()->getItems() as $shipment) {
             $id = $shipment->getData('increment_id');
@@ -20,7 +21,12 @@ class ZsoltNet_GLSLabel_Block_Widget_Grid_Column_Renderer_GLSStatus extends Mage
             $processing = $order->isProcessingDelivery();
         }
 
-        if ($id && ($processing || $order->isCompleted())) {
+        $orderState = $order->getState();
+        if ($orderState === Mage_Sales_Model_Order::STATE_COMPLETE) {
+            $isCompleted = true;
+        }
+
+        if ($id && ($processing || $isCompleted)) {
             return "<span class='glslabel' rel=".Mage::helper("adminhtml")->getUrl("glslabel/shipment/getstatus/",array("labelid"=>$id)).">".parent::render($row)."</span>";
         } else if ($isPersonal){
             return Mage::getStoreConfig('glslabelmodule/glslabel/personalservicelabel', $order->getStoreId());
