@@ -1,5 +1,7 @@
 {
     "keywords": [
         "openmage-module"
-    ]
+    ],
+    "name": "openmage-module-fostering\/zsoltnet_glslabel",
+    "license": "OSL-3.0"
 }
